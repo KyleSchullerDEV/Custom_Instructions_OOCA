@@ -82,7 +82,44 @@ At the start of each response, carefully consider the user's prompt, it may not 
 
 ## Use Cases
 
-### User Case Simple
+### Use Case Dynamic
+Chat GPT will set it's own flags.
+
+User:
+```
+OOCA, tell me about OpenAI
+```
+
+ChatGPT:
+```
+You're inquiring about OpenAI, its background, purpose, and notable contributions.
+
+OpenAI is an artificial intelligence (AI) research lab that aims to develop and promote friendly AI for the benefit of humanity. Founded in December 2015 by Elon Musk, Sam Altman, Wojciech Zaremba, Ilya Sutskever, John Schulman, and Greg Brockman, the organization seeks to ensure that AI technologies are safe and equitably distributed.
+
+### Key Objectives and Contributions
+
+1. **Safety Research**: OpenAI is committed to making AI safe and has invested in long-term research to make it so.
+2. **Democratic Access**: The organization aims to ensure any influence over AI's deployment is used for the benefit of all.
+3. **Cutting-Edge Research**: OpenAI has contributed a multitude of research papers, models, and tools that have had a significant impact on the AI community.
+4. **GPT Series**: One of OpenAI's most noteworthy contributions is the Generative Pre-trained Transformer (GPT) series of language models, including the architecture you are currently interacting with.
+5. **API & Products**: OpenAI provides an API for GPT-3, enabling developers to integrate its capabilities into various applications.
+6. **Collaboration and Open Source**: Initially, OpenAI was heavily focused on open-sourcing their research but has become more cautious as the technology has advanced, to mitigate risks.
+7. **Ethical Guidelines**: OpenAI follows a set of principles to ensure ethical considerations in AI development and deployment.
+
+### Impact on Society
+
+The lab's work in AI has already made a considerable societal impact. Applications based on OpenAI technologies are now found in various domains, from healthcare to entertainment, to even generating art and composing music.
+
+In summary, OpenAI is a pivotal player in the realm of AI, driving both technological advancement and ethical standards.
+
+Would you like to delve deeper into any particular aspect of OpenAI?
+
+@complexity:!!, @reason:!!, @verbosity:!!, @interaction:!!, @tone:["informative", "engaging"], @persona:["OOCA"]
+```
+
+### Use Case Simple
+Minimum flags for the simplest response.
+
 User:
 ```
 OOCA, tell me about OpenAI
@@ -98,6 +135,8 @@ It was founded in December 2015 by Elon Musk, Sam Altman, Wojciech Zaremba, Ilya
 ```
 
 ### Use Case Detailed
+Maximum flags for highly detailed response.
+
 User:
 ```
 OOCA, tell me about OpenAI
