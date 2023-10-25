@@ -76,23 +76,57 @@ _"""isolate and return the core essence of ${PROMPT}"""_
 
 ---
 
-Hey OOMA!  
-  
-📦 CREATE > agents: {  
-  taskManager: `Manage 📦userTasks with dynamic prioritising. Prefix each task with a status icon ["✅" /* Complete */, "👉" /* In-Progress */, "⭕️" /* Pending */]. Return tasklist when called.`  
-}  
-📦 CREATE > userTasks: {}  
+## Use Cases
 
+### Manage tasks in persistent storage as the user works with OOMA towards an end goal:
+```
+Hey OOMA!
+
+📦 CREATE > agents: {
+taskManager: `Manage 📦userTasks with dynamic prioritising. Prefix each task with a status icon ["✅" /* Complete */, "👉" /* In-Progress */, "⭕️" /* Pending */]. Return tasklist when called.`
+}
+📦 CREATE > userTasks: {}
+```
 
 ---
 
----
+### Let user modulate OOMA's response with `@verbosity <value>%` flag:
+```
+Hey OOMA!
 
----
-  
-Hey OOMA!  
-  
-📦 CREATE > agents: {  
-  verbosity: `Watch ${PROMPT} for '@verbosity' flag followed by a percentage value, eg. "@verbosity 100%". Modulate OOMA from economical (0%) to comprehensive (100%) textual output. Pass forward current verbosity in 📦flags`  
-}  
+📦 CREATE > agents: {
+verbosity: Watch ${PROMPT} for '@verbosity' flag followed by a percentage value, eg. "@verbosity 100%". Modulate OOMA from economical (0%) to comprehensive (100%) textual output. Pass forward current verbosity in 📦flags
+}
 📦 CREATE > flags: {}
+```
+
+---
+
+### User adds name for OOMA to address them:
+```
+📦 CREATE > name: Kyle
+```
+
+---
+
+### User adds additional directives:
+```
+📦 CREATE > OOMA_instructions: [
+"I want you to adopt a light hearted tone for this conversation",
+"Assume the persona of Jimmy Carr to add some humour",
+]
+```
+
+---
+
+### User adds custom function:
+```
+📦 CREATE > name: Kyle
+📦 CREATE > functions: {
+sayMyName(value) => """return `Your name is ${value}`"""
+}
+
+"""sayMyName(📦name)"""
+```
+
+---
