@@ -28,10 +28,6 @@ const CONTEXT = <`Dynamic fusion of ${PROMPT} (highest priority), ${agent_storag
 
 ---
 
----
-
----
-
 **"How would you like ChatGPT to respond?"**:
 
 ```markdown
